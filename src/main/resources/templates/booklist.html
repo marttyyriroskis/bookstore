@@ -27,6 +27,10 @@
             <td th:text="${book.publicationYear}"></td>
             <td th:text="${book.price}"></td>
             <td th:text="${book.category.categoryName}"></td>
+
+            <!-- <td th:text="${car.owner?.firstName != null && car.owner?.lastName != null ? car?.owner?.firstName + ' ' + car?.owner?.lastName : 'Unknown'}"> </td> -->
+            <!-- <td th:text="${student.department?.name != null ? student.department.name : 'unknown'}"></td> -->
+
             <td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
             <td><a th:href="@{/editBook/{id}(id=${book.id})}">Edit</a></td>
         </tr>

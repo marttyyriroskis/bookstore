@@ -3,6 +3,7 @@ package bookstore.lopputehtava.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import bookstore.lopputehtava.domain.Book;
 import bookstore.lopputehtava.domain.BookRepository;
 import bookstore.lopputehtava.domain.CategoryRepository;
+import jakarta.validation.Valid;
 
 @Controller
 public class BookController {
@@ -45,7 +47,7 @@ public class BookController {
     }
 
     // Edit book
-    @GetMapping("editBook/{id}")
+    @GetMapping("/editBook/{id}")
     public String editBook(@PathVariable("id") Long id, Model model) {
         // public String editBook(@RequestParam(name = "id") Long id, Model model) {
         model.addAttribute("editBook", bookRepository.findById(id));
@@ -53,11 +55,28 @@ public class BookController {
         return "editBook";
     }
 
-    // Save a new or edited book
+    // Save a new book
     @PostMapping("/saveBook")
-    public String saveBook(@ModelAttribute("book") Book book) {
+    public String saveBook(@Valid @ModelAttribute("book") Book book, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("editBook", book);
+            model.addAttribute("categories", categoryRepository.findAll());
+            return "newBook";
+        }
         bookRepository.save(book);
         return "redirect:bookList";
+    }
+
+    // Save an edited book
+    @PostMapping("/saveEditedBook")
+    public String saveEditedBook(@Valid @ModelAttribute("book") Book book, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("editBook", book);
+            model.addAttribute("categories", categoryRepository.findAll());
+            return "editBook";
+        }
+        bookRepository.save(book);
+        return "redirect:/bookList";
     }
 
     // Delete book

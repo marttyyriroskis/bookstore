@@ -1,19 +1,28 @@
 package bookstore.lopputehtava.domain;
 
 import jakarta.persistence.*;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String title, author, isbn;
+
+    @Size(min = 1, max = 100)
+    private String title;
+
+    @Size(min = 1, max = 100)
+    private String author;
+
+    @Size(min = 13, max = 13)
+    private String isbn;
+
+    @NotNull
     private int publicationYear;
+
+    @NotNull
     private double price;
 
     @ManyToOne

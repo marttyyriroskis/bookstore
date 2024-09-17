@@ -28,9 +28,9 @@ public class LopputehtavaApplication {
 			categoryRepository.save(category2);
 			categoryRepository.save(category3);
 
-			bookRepository.save(new Book("title", "author", "isbn", 2010, 10.10, category1));
-			bookRepository.save(new Book("title2", "author2", "isbn2", 2011, 20.10, category2));
-			bookRepository.save(new Book("title3", "author3", "isbn3", 2012, 30.10, category3));
+			bookRepository.save(new Book("title", "author", "123456789isbn", 2010, 10.10, category1));
+			bookRepository.save(new Book("title2", "author2", "123456789isb2", 2011, 20.10, category2));
+			bookRepository.save(new Book("title3", "author3", "123456789isb3", 2012, 30.10, category3));
 
 			for (Book book : bookRepository.findAll()) {
 				System.out.println(book.toString());

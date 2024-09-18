@@ -33,3 +33,9 @@
 - Add test Categories using the CommandLineRunner
 - Edit test Books using the CommandLineRunner
 - Add this README
+
+## Week 5 (18.9.-25.8.)
+
+- Modify pom.xml and application.properties to accommodate REST API
+- Add RestBookController with functionalities find all and find by id
+- Edit one-to-many relationships to ignore JSON link

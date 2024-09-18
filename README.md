@@ -39,3 +39,4 @@
 - Modify pom.xml and application.properties to accommodate REST API
 - Add RestBookController with functionalities find all and find by id
 - Edit one-to-many relationships to ignore JSON link
+- Add new book and edit book functionalities to RestBookController

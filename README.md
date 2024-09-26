@@ -34,9 +34,18 @@
 - Edit test Books using the CommandLineRunner
 - Add this README
 
-## Week 5 (18.9.-25.8.)
+## Week 5 (18.9.-25.9.)
 
 - Modify pom.xml and application.properties to accommodate REST API
 - Add RestBookController with functionalities find all and find by id
 - Edit one-to-many relationships to ignore JSON link
 - Add new book and edit book functionalities to RestBookController
+
+## Week 6 (25.9.-2.10.)
+
+- Edit pom.xml to accommodate two new dependencies
+- Add WebSecurityConfig.java to make use of authentication, login and logout functionalities
+- Add AppUser and AppUserRepository classes to allow for test users
+- Add UserDetailServiceImpl.java to authenticate test users
+- Edit BookController and RestBookController to make ADD, EDIT, DELETE functionalities unavailable to non-admin users
+- Edit bookList.html: logout button, authenticated username, hidden fields for non-admin users

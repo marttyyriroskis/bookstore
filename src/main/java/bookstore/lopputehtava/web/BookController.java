@@ -1,6 +1,7 @@
 package bookstore.lopputehtava.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -39,6 +40,7 @@ public class BookController {
     }
 
     // Add new book
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/newBook")
     public String addBook(Model model) {
         model.addAttribute("book", new Book());
@@ -47,6 +49,7 @@ public class BookController {
     }
 
     // Edit book
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/editBook/{id}")
     public String editBook(@PathVariable("id") Long id, Model model) {
         // public String editBook(@RequestParam(name = "id") Long id, Model model) {
@@ -56,6 +59,7 @@ public class BookController {
     }
 
     // Save a new book
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/saveBook")
     public String saveBook(@Valid @ModelAttribute("book") Book book, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
@@ -68,6 +72,7 @@ public class BookController {
     }
 
     // Save an edited book
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/saveEditedBook")
     public String saveEditedBook(@Valid @ModelAttribute("book") Book book, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
@@ -80,6 +85,7 @@ public class BookController {
     }
 
     // Delete book
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("delete/{id}")
     public String deleteBook(@PathVariable("id") Long id, Model model) {
         bookRepository.deleteById(id);

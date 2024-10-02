@@ -49,3 +49,11 @@
 - Add UserDetailServiceImpl.java to authenticate test users
 - Edit BookController and RestBookController to make ADD, EDIT, DELETE functionalities unavailable to non-admin users
 - Edit bookList.html: logout button, authenticated username, hidden fields for non-admin users
+
+## Week 7 (2.10.-9.10.)
+
+- Edit LopputehtavaApplicationTests to test that BookController starts up normally
+- Add WebLayerTest.java that tests that "/index" produces a 200 OK on access
+- Add BookRepositoryTest.java to test BookRepository (GET, POST, DELETE)
+- Add Dockerfile to start deployment to Render.com
+- Deploy project at Render.com

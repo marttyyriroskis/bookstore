@@ -24,7 +24,8 @@ public class WebSecurityConfig {
 
     private static final AntPathRequestMatcher[] WHITE_LIST_URLS = {
         new AntPathRequestMatcher("/api/books"),
-        new AntPathRequestMatcher("/h2-console")};
+        new AntPathRequestMatcher("/h2-console"),
+        new AntPathRequestMatcher("/index")};
 
     @Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {

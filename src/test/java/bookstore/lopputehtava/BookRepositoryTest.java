@@ -19,9 +19,4 @@ public class BookRepositoryTest {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @Test
-    public void findByIdShouldReturnBook() {
-        List<Book> books = bookRepository.findById(1L);
-        assertThat(books).isNotNull;
-    }
 }

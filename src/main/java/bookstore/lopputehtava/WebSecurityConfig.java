@@ -46,8 +46,8 @@ public class WebSecurityConfig {
         )
         .logout(logout -> logout
             .permitAll()
-        )
-        .csrf(csrf -> csrf.disable()); //TODO: remove for production
+        );
+        //.csrf(csrf -> csrf.disable()); //TODO: remove for production
         return http.build();
 
     }

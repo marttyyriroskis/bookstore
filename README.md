@@ -57,3 +57,4 @@
 - Add BookRepositoryTest.java to test BookRepository (GET, POST, DELETE)
 - Add Dockerfile to start deployment to Render.com
 - Deploy project at Render.com
+- Add RestBookTest.java to test RESTful Service

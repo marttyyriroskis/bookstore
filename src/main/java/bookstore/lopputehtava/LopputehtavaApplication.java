@@ -1,16 +1,7 @@
 package bookstore.lopputehtava;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import bookstore.lopputehtava.domain.AppUser;
-import bookstore.lopputehtava.domain.AppUserRepository;
-import bookstore.lopputehtava.domain.Book;
-import bookstore.lopputehtava.domain.BookRepository;
-import bookstore.lopputehtava.domain.Category;
-import bookstore.lopputehtava.domain.CategoryRepository;
 
 @SpringBootApplication
 public class LopputehtavaApplication {
@@ -18,7 +9,7 @@ public class LopputehtavaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LopputehtavaApplication.class, args);
 	}
-
+/*
 	@Bean
 	public CommandLineRunner demoData(BookRepository bookRepository, CategoryRepository categoryRepository, AppUserRepository appUserRepository) {
 		return (args) -> {
@@ -42,8 +33,7 @@ public class LopputehtavaApplication {
 			for (Book book : bookRepository.findAll()) {
 				System.out.println(book.toString());
 			}
-
 		};
 	}
-
+*/
 }

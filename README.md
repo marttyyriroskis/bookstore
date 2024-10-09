@@ -58,3 +58,11 @@
 - Add Dockerfile to start deployment to Render.com
 - Deploy project at Render.com
 - Add RestBookTest.java to test RESTful Service
+
+## Week 8 (9.10.-16.10.)
+
+- Add bookstore.sql with table creation SQL statements
+- Edit application.properties to use PostgreSQL instead of H2
+- Add dependency to pom.xml
+- Remove test data from main class
+- Fix case sensitivity (categoryName in Category.java -> name)
